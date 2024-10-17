@@ -1,5 +1,5 @@
 const fetchServices = async () => {
-  const response = await fetch("http://localhost:3000/services");
+  const response = await fetch("https://hairdresser-website-production.up.railway.app/services");
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
@@ -7,12 +7,13 @@ const fetchServices = async () => {
 };
 
 const fetchEmployees = async () => {
-  const response = await fetch("http://localhost:3000/employees");
+  const response = await fetch("https://hairdresser-website-production.up.railway.app/employees");
   if (!response.ok) {
     throw new Error("Network response was not ok");
   }
   return response.json();
 };
+
 const fetchAvaiableHours = async (
   date: string | null,
   employeeId: number | undefined,
@@ -20,7 +21,7 @@ const fetchAvaiableHours = async (
 ) => {
   if (employeeId === undefined) return;
   const response = await fetch(
-    `http://localhost:3000/available_hours/employee/${employeeId}/reservation_date/${date}/duration/${serviceDuration}`
+    `https://hairdresser-website-production.up.railway.app/available_hours/employee/${employeeId}/reservation_date/${date}/duration/${serviceDuration}`
   );
   if (!response.ok) {
     throw new Error("Network response was not ok");
@@ -33,7 +34,7 @@ import axios, { AxiosError } from "axios";
 const fetchActiveReservations = async (tokenId: string | null) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/reservations/active",
+      "https://hairdresser-website-production.up.railway.app/reservations/active",
       {},
       {
         headers: {
@@ -56,7 +57,7 @@ const fetchActiveReservations = async (tokenId: string | null) => {
 const fetchHistoryReservations = async (tokenId: string | null) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/reservations/history",
+      "https://hairdresser-website-production.up.railway.app/reservations/history",
       {},
       {
         headers: {

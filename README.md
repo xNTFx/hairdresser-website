@@ -1,4 +1,4 @@
-# Hairdresser-website
+# Hair Salon Booking
 
 ## Tech Stack
 - React

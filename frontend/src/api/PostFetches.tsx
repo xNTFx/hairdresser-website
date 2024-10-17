@@ -8,7 +8,7 @@ const createReservation = async (
 ) => {
   try {
     const response = await axios.post(
-      "http://localhost:3000/reservations/create",
+      "https://hairdresser-website-production.up.railway.app/reservations/create",
       reservationData,
       {
         headers: {
@@ -34,7 +34,7 @@ const cancelReservation = async (
 ) => {
   try {
     const response = await axios.put(
-      `http://localhost:3000/reservations/cancel/${reservationId}`,
+      `https://hairdresser-website-production.up.railway.app/reservations/cancel/${reservationId}`,
       {},
       {
         headers: {
